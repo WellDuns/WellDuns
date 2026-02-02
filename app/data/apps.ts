@@ -13,7 +13,11 @@ export const apps: App[] = [
       macAppStore: 'https://apps.apple.com/app/sample',
       iosAppStore: 'https://apps.apple.com/app/sample-ios'
     },
-    screenshots: []
+    screenshots: [
+      'https://picsum.photos/200/300',
+      'https://picsum.photos/200/300',
+      'https://picsum.photos/200/300'
+    ]
   },
   {
     id: 'sample-app-2',
