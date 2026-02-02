@@ -15,6 +15,7 @@
 
     <footer class="footer">
       <p>&copy; {{ new Date().getFullYear() }} Well Duns</p>
+      <NuxtLink to="/privacy" class="footer-link">Privacy Policy</NuxtLink>
     </footer>
   </div>
 </template>
@@ -62,5 +63,16 @@
 .footer p {
   font-size: 0.875rem;
   color: var(--color-text-muted);
+}
+
+.footer-link {
+  display: inline-block;
+  margin-top: var(--spacing-sm);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.footer-link:hover {
+  color: var(--color-primary);
 }
 </style>
