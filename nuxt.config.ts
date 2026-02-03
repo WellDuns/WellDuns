@@ -5,9 +5,7 @@ export default defineNuxtConfig({
   ssr: false,
 
   app: {
-    // If deploying to https://<user>.github.io/<repo>/, set baseURL: '/<repo>/'
-    // If using a custom domain or root github.io, leave as '/'
-    baseURL: '/',
+baseURL: '/WellDuns/',
     head: {
       title: 'Well Duns - Small Utility Apps',
       meta: [
