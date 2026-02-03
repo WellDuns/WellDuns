@@ -1,6 +1,7 @@
 <script setup lang="ts">
 defineProps<{
   platform: 'macos' | 'ios' | 'web' | 'windows' | 'linux'
+  size?: 'small' | 'default'
 }>()
 
 const platformInfo = {
@@ -13,8 +14,7 @@ const platformInfo = {
 </script>
 
 <template>
-  <span class="os-tag" :class="`os-tag--${platform}`">
-    <span class="os-tag-icon" aria-hidden="true">{{ platformInfo[platform].icon }}</span>
+  <span class="os-tag" :class="[`os-tag--${platform}`, size === 'small' && 'os-tag--small']">
     <span class="os-tag-label">{{ platformInfo[platform].label }}</span>
   </span>
 </template>
@@ -33,9 +33,9 @@ const platformInfo = {
   white-space: nowrap;
 }
 
-.os-tag-icon {
-  font-family: 'Symbols Nerd Font', 'Nerd Font', monospace;
-  font-size: 0.875rem;
+.os-tag--small {
+  padding: 1px 6px;
+  font-size: 0.625rem;
 }
 
 .os-tag--macos {

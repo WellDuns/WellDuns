@@ -4,7 +4,9 @@
 
     <header class="header">
       <div class="header-content">
-        <img src="/logo.png" alt="Well Duns" class="logo" />
+        <NuxtLink to="/" class="logo-link">
+          <img src="/logo.png" alt="Well Duns" class="logo" />
+        </NuxtLink>
         <p class="tagline">Small, thoughtful utility apps</p>
       </div>
     </header>
@@ -39,8 +41,12 @@
   gap: var(--spacing-sm);
 }
 
+.logo-link {
+  display: block;
+}
+
 .logo {
-  height: 48px;
+  height: 64px;
   width: auto;
 }
 

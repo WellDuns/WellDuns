@@ -26,16 +26,17 @@ const emit = defineEmits<{
     <div class="app-card-content">
       <h3 class="app-card-name">{{ app.name }}</h3>
       <p class="app-card-tagline">{{ app.tagline }}</p>
+    </div>
 
-      <div class="app-card-platforms">
-        <OsTag v-for="platform in app.platforms" :key="platform" :platform="platform" />
-      </div>
+    <div class="app-card-platforms">
+      <OsTag v-for="platform in app.platforms" :key="platform" :platform="platform" size="small" />
     </div>
   </article>
 </template>
 
 <style scoped>
 .app-card {
+  position: relative;
   display: flex;
   gap: var(--spacing-md);
   padding: var(--spacing-lg);
@@ -90,13 +91,15 @@ const emit = defineEmits<{
 .app-card-tagline {
   font-size: 0.875rem;
   color: var(--color-text-muted);
-  margin-bottom: var(--spacing-sm);
   line-height: 1.4;
 }
 
 .app-card-platforms {
+  position: absolute;
+  bottom: var(--spacing-sm);
+  right: var(--spacing-sm);
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-xs);
+  gap: 4px;
 }
 </style>
