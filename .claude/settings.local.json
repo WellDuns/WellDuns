@@ -6,7 +6,12 @@
       "Bash(npx nuxi@latest init . --packageManager npm --gitInit false --force --template minimal)",
       "Bash(npm install)",
       "Bash(npm run dev:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(gh run list:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(git rm:*)"
     ]
   }
 }
