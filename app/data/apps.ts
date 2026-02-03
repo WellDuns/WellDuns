@@ -18,16 +18,23 @@ export const apps: App[] = [
       '/apps/ratio-calculator/ratio-calculator-img2.png',
     ]
   },
-  // {
-  //   id: 'sample-app-2',
-  //   name: 'Another App',
-  //   tagline: 'Another placeholder utility',
-  //   description: 'Another sample app to show how multiple apps appear in the grid. Add your real apps here with their actual descriptions, icons, and store links.',
-  //   icon: 'https://picsum.photos/150/150',
-  //   platforms: ['web'],
-  //   links: {
-  //     website: 'https://example.com'
-  //   },
-  //   screenshots: []
-  // }
+  {
+    id: 'time-utils',
+    name: 'Time Utils',
+    tagline: 'Customizable timers, countdowns, and clocks right on your desktop.',
+    description: 'Create floating widgets to track time however you need, whether counting up, counting down to a deadline, or displaying the current time, all with a quick command from the omnibox launcher.',
+    icon: '/apps/time-utils/time-utils-icon.png',
+    platforms: [
+      'macos'
+    ],
+    links: {
+      macAppStore: 'https://apps.apple.com/us/app/time-utils/id6758682107'
+    },
+    screenshots: [
+      '/apps/time-utils/time-utils-img1.jpg',
+      '/apps/time-utils/time-utils-img2.jpg',
+      '/apps/time-utils/time-utils-img3.jpg',
+      '/apps/time-utils/time-utils-img4.jpg'
+    ]
+  }
 ]

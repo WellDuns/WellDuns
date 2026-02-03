@@ -32,5 +32,12 @@ baseURL: '/',
     }
   },
 
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css'],
+
+  // Exclude admin page from production build
+  nitro: {
+    prerender: {
+      ignore: ['/admin']
+    }
+  }
 })
