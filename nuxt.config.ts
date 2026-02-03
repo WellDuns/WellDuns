@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   ssr: false,
 
   app: {
-baseURL: '/WellDuns/',
+baseURL: '/',
     head: {
       title: 'Well Duns - Small Utility Apps',
       meta: [
