@@ -74,7 +74,11 @@ body {
     100px 100px,
     25px 25px,
     25px 25px;
-  background-position: -1px -1px;
+  background-position:
+    calc(50vw) calc(50vh),
+    calc(50vw) calc(50vh),
+    calc(50vw) calc(50vh),
+    calc(50vw) calc(50vh);
   position: fixed;
   top: 0;
   left: 0;
