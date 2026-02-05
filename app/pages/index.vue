@@ -1,8 +1,67 @@
 <script setup lang="ts">
 const { apps, expandedApp, openApp, closeApp, initFromUrl } = useApps()
 
+const appsGrid = ref<HTMLElement | null>(null)
+const bottomBracketStyle = ref<{ left: string; right: string }>({ left: '0', right: '0' })
+
+function updateBottomBrackets() {
+  if (!appsGrid.value) return
+
+  const children = Array.from(appsGrid.value.children) as HTMLElement[]
+  if (children.length === 0) return
+
+  const section = appsGrid.value.parentElement
+  if (!section) return
+
+  const sectionRect = section.getBoundingClientRect()
+
+  // Find items on the last row (same offsetTop as the last item)
+  const lastItem = children[children.length - 1]
+  const lastRowTop = lastItem.offsetTop
+  const lastRowItems = children.filter(child => child.offsetTop === lastRowTop)
+
+  // Get the leftmost and rightmost items on the last row
+  const leftmost = lastRowItems[0]
+  const rightmost = lastRowItems[lastRowItems.length - 1]
+
+  const gridRect = appsGrid.value.getBoundingClientRect()
+  const leftmostRect = leftmost.getBoundingClientRect()
+  const rightmostRect = rightmost.getBoundingClientRect()
+
+  // Calculate positions relative to the section, with 25px offset from cards
+  const offset = 25
+  const leftPos = leftmostRect.left - sectionRect.left - offset
+  const rightPos = sectionRect.right - rightmostRect.right - offset
+
+  bottomBracketStyle.value = {
+    left: `${Math.max(0, leftPos)}px`,
+    right: `${Math.max(0, rightPos)}px`
+  }
+}
+
 onMounted(() => {
   initFromUrl()
+
+  nextTick(() => {
+    updateBottomBrackets()
+  })
+
+  // Update on resize
+  window.addEventListener('resize', updateBottomBrackets)
+
+  // Use ResizeObserver for more reliable updates
+  if (appsGrid.value) {
+    const observer = new ResizeObserver(updateBottomBrackets)
+    observer.observe(appsGrid.value)
+
+    onUnmounted(() => {
+      observer.disconnect()
+    })
+  }
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateBottomBrackets)
 })
 </script>
 
@@ -26,18 +85,18 @@ onMounted(() => {
         </svg>
 
         <!-- Drafting bracket - bottom left corner -->
-        <svg class="bracket-corner bracket-bottom-left" viewBox="0 0 40 40" aria-hidden="true">
+        <svg class="bracket-corner bracket-bottom-left" :style="{ left: bottomBracketStyle.left }" viewBox="0 0 40 40" aria-hidden="true">
           <line x1="0" y1="5" x2="0" y2="45" />
           <line x1="-5" y1="40" x2="35" y2="40" />
         </svg>
 
         <!-- Drafting bracket - bottom right corner -->
-        <svg class="bracket-corner bracket-bottom-right" viewBox="0 0 40 40" aria-hidden="true">
+        <svg class="bracket-corner bracket-bottom-right" :style="{ right: bottomBracketStyle.right }" viewBox="0 0 40 40" aria-hidden="true">
           <line x1="40" y1="5" x2="40" y2="45" />
           <line x1="5" y1="40" x2="45" y2="40" />
         </svg>
 
-        <div class="apps-grid">
+        <div ref="appsGrid" class="apps-grid">
           <AppCard
             v-for="app in apps"
             :key="app.id"
@@ -100,12 +159,12 @@ onMounted(() => {
 
 .bracket-bottom-left {
   bottom: 10px;
-  left: 0;
+  left: 0; /* default, overridden by dynamic style */
 }
 
 .bracket-bottom-right {
   bottom: 10px;
-  right: 0;
+  right: 0; /* default, overridden by dynamic style */
 }
 
 .apps-grid {
