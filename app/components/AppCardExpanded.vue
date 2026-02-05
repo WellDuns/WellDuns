@@ -239,7 +239,6 @@ watch(() => props.app, (newApp) => {
 .screenshot {
   width: 100%;
   border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
 }
 
 /* Transitions */

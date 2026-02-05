@@ -60,14 +60,21 @@ body {
   min-height: 100vh;
 }
 
-/* Blueprint grid background */
+/* Drafting paper grid background */
 .blueprint-bg {
   background-image:
-    linear-gradient(var(--color-primary-light) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-primary-light) 1px, transparent 1px);
-  background-size: 40px 40px;
+    /* Major grid lines (thicker) */
+    linear-gradient(rgba(69, 81, 149, 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(69, 81, 149, 0.25) 1px, transparent 1px),
+    /* Minor grid lines (thinner) */
+    linear-gradient(rgba(69, 81, 149, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(69, 81, 149, 0.12) 1px, transparent 1px);
+  background-size:
+    100px 100px,
+    100px 100px,
+    25px 25px,
+    25px 25px;
   background-position: -1px -1px;
-  opacity: 0.15;
   position: fixed;
   top: 0;
   left: 0;
@@ -133,4 +140,26 @@ a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary);
+}
+
+/* Drafting annotations */
+.annotation {
+  font-family: 'Coming Soon', cursive;
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.annotation-arrow {
+  stroke: var(--color-primary);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.annotation-bracket {
+  color: var(--color-primary);
+  font-family: 'Coming Soon', cursive;
+  font-size: 1.5rem;
+  line-height: 1;
 }

@@ -16,6 +16,8 @@ export interface App {
 }
 
 export function useApps() {
+  const route = useRoute()
+  const router = useRouter()
   const expandedAppId = useState<string | null>('expandedApp', () => null)
 
   const expandedApp = computed(() => {
@@ -25,10 +27,20 @@ export function useApps() {
 
   function openApp(id: string) {
     expandedAppId.value = id
+    router.replace({ query: { app: id } })
   }
 
   function closeApp() {
     expandedAppId.value = null
+    router.replace({ query: {} })
+  }
+
+  // Initialize from URL on mount
+  function initFromUrl() {
+    const appId = route.query.app as string | undefined
+    if (appId && apps.find(app => app.id === appId)) {
+      expandedAppId.value = appId
+    }
   }
 
   return {
@@ -36,6 +48,7 @@ export function useApps() {
     expandedAppId,
     expandedApp,
     openApp,
-    closeApp
+    closeApp,
+    initFromUrl
   }
 }
