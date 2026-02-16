@@ -2,6 +2,11 @@
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+## Deployment
+
+The deployment is handled automatically by GitHub Actions. Simply push to the `main` branch.
+
+
 ## Setup
 
 Make sure to install dependencies:
