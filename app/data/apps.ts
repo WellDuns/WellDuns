@@ -2,6 +2,24 @@ import type { App } from '~/composables/useApps'
 
 export const apps: App[] = [
   {
+    id: 'camerascripts',
+    name: 'CameraScripts.com',
+    tagline: 'Scripts & Camera Cards built for the modern era',
+    description: 'CameraScripts is a purpose-built script editor for television production teams, offering a powerful 4-column layout for shot numbers, visual notes, script content, and audio notes, all in your browser. Create, format, and export professional UK-style camera scripts and camera cards (full and half page), with features like locked shot numbering for revisions and read-only sharing for seamless team collaboration. Built for the modern era, it replaces outdated workflows with a streamlined, production-ready tool designed specifically for the way camera scripting actually works. ',
+    icon: '/apps/camerascripts/camerascripts-icon.png',
+    platforms: [
+      'web'
+    ],
+    links: {
+      website: 'https://camerascripts.com/'
+    },
+    screenshots: [
+      '/apps/camerascripts/camerascripts-img1.jpg',
+      '/apps/camerascripts/camerascripts-img2.jpg',
+      '/apps/camerascripts/camerascripts-img3.jpg'
+    ]
+  },
+  {
     id: 'ratio-calculator',
     name: 'Ratio Calculator',
     tagline: 'Ratio Calculator makes scaling ratios effortless.',
@@ -36,5 +54,5 @@ export const apps: App[] = [
       '/apps/time-utils/time-utils-img3.jpg',
       '/apps/time-utils/time-utils-img4.jpg'
     ]
-  }
+  },
 ]
