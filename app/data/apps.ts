@@ -54,5 +54,5 @@ export const apps: App[] = [
       '/apps/time-utils/time-utils-img3.jpg',
       '/apps/time-utils/time-utils-img4.jpg'
     ]
-  },
+  }
 ]
