@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    // "deploy": "Auto Deploy with GitHub Actions",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
