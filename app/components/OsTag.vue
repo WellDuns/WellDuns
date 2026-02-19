@@ -39,15 +39,18 @@ const platformInfo = {
 }
 
 .os-tag--macos {
-  background-color: rgba(69, 81, 149, 0.15);
+  background-color: #d9ecff;
+  color: #2f5f88;
 }
 
 .os-tag--ios {
-  background-color: rgba(69, 81, 149, 0.12);
+  background-color: #2f4f9b;
+  color: #FFFFFF;
 }
 
 .os-tag--web {
-  background-color: rgba(150, 164, 204, 0.3);
+  background-color: #319769;
+  color: #f5f7fa;
 }
 
 .os-tag--windows {
