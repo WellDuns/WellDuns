@@ -54,5 +54,22 @@ export const apps: App[] = [
       '/apps/time-utils/time-utils-img3.jpg',
       '/apps/time-utils/time-utils-img4.jpg'
     ]
+  },
+  {
+    id: 'tab-bin',
+    name: 'TabBin Extension',
+    tagline: 'Free Your Tabs',
+    description: 'Tab Bin lets you free your tabs without losing them.\r\n\r\nQuickly archive your open tabs into a local archive to clear the tab bar and reclaim memory without sending anything to the cloud and without polluting your bookmarks. \r\n\r\nTab Bin can take over your new tab page or live as a quick toolbar popup. Your choice.',
+    icon: '/apps/tab-bin/tab-bin-icon.png',
+    platforms: [
+      'web'
+    ],
+    links: {
+      website: 'https://chromewebstore.google.com/detail/gicjoglfilknbbcolmkihagboaoblglj/error'
+    },
+    screenshots: [
+      '/apps/tab-bin/tab-bin-img1.jpg',
+      '/apps/tab-bin/tab-bin-img2.jpg'
+    ]
   }
 ]
