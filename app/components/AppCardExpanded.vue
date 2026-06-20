@@ -83,6 +83,11 @@ watch(() => props.app, (newApp) => {
                 type="ios-app-store"
                 :url="app.links.iosAppStore"
               />
+              <StoreButton
+                v-if="app.links.download"
+                type="download"
+                :url="app.links.download"
+              />
             </div>
 
             <div v-if="app.screenshots && app.screenshots.length > 0" class="modal-screenshots">

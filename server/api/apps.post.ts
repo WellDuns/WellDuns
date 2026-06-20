@@ -38,7 +38,7 @@ export default defineEventHandler(async (event) => {
     }
   }
 
-  const { id, name, tagline, description, website, macAppStore, iosAppStore } = fields
+  const { id, name, tagline, description, website, macAppStore, iosAppStore, download } = fields
 
   if (!id || !name) {
     throw createError({ statusCode: 400, message: 'ID and Name are required' })
@@ -74,6 +74,7 @@ export default defineEventHandler(async (event) => {
   if (website) links.website = website
   if (macAppStore) links.macAppStore = macAppStore
   if (iosAppStore) links.iosAppStore = iosAppStore
+  if (download) links.download = download
 
   // Build app object
   const newApp = {

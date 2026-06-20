@@ -11,6 +11,7 @@ export interface App {
     website?: string
     macAppStore?: string
     iosAppStore?: string
+    download?: string
   }
   screenshots?: string[]
 }

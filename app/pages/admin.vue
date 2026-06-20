@@ -13,7 +13,8 @@ const form = reactive({
   platforms: [] as string[],
   website: '',
   macAppStore: '',
-  iosAppStore: ''
+  iosAppStore: '',
+  download: ''
 })
 
 const iconFile = ref<File | null>(null)
@@ -91,6 +92,7 @@ async function submit() {
   formData.append('website', form.website)
   formData.append('macAppStore', form.macAppStore)
   formData.append('iosAppStore', form.iosAppStore)
+  formData.append('download', form.download)
 
   form.platforms.forEach(p => formData.append('platforms', p))
 
@@ -122,6 +124,7 @@ async function submit() {
       form.website = ''
       form.macAppStore = ''
       form.iosAppStore = ''
+      form.download = ''
       iconFile.value = null
       iconPreview.value = ''
       screenshotFiles.value = []
@@ -227,6 +230,11 @@ async function submit() {
           <div class="form-group">
             <label for="iosAppStore">iOS App Store URL</label>
             <input id="iosAppStore" v-model="form.iosAppStore" type="url" />
+          </div>
+
+          <div class="form-group">
+            <label for="download">Download URL</label>
+            <input id="download" v-model="form.download" type="text" placeholder="/downloads/MyApp.zip or https://..." />
           </div>
         </div>
 

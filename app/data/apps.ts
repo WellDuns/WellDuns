@@ -71,5 +71,18 @@ export const apps: App[] = [
       '/apps/tab-bin/tab-bin-img1.jpg',
       '/apps/tab-bin/tab-bin-img2.jpg'
     ]
+  },
+  {
+    id: 'timeutils-helper',
+    name: 'TimeUtils Global Hotkey Helper',
+    tagline: 'TimeUtils in any App',
+    description: 'Want to use your TimeUtils App in any application? This helper application gives you a global keyboard shortcut to let you insert timestamps and durations into any application. \r\n\r\nNote: You must have the main TimeUtils app installed.',
+    icon: '/apps/timeutils-helper/timeutils-helper-icon.png',
+    platforms: [
+      'macos'
+    ],
+    links: {
+      download: '/downloads/TimeUtilsHelper.zip'
+    }
   }
 ]
