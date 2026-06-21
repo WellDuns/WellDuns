@@ -82,7 +82,7 @@ export const apps: App[] = [
       'macos'
     ],
     links: {
-      download: '/downloads/TimeUtilsHelper.zip'
+      download: '/downloads/TimeUtilsHelper.dmg'
     }
   }
 ]
