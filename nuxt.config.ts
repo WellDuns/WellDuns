@@ -37,7 +37,9 @@ baseURL: '/',
   // Exclude admin page from production build
   nitro: {
     prerender: {
-      ignore: ['/admin']
+      ignore: ['/admin'],
+      // Update-check feed for the TimeUtilsHelper app, generated from app/data/apps.ts
+      routes: ['/timeutils/helper-update.json']
     }
   }
 })

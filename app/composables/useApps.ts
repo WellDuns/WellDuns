@@ -14,6 +14,11 @@ export interface App {
     download?: string
   }
   screenshots?: string[]
+  /** Feeds the app's update-check JSON (prerendered at build time). */
+  update?: {
+    version: string
+    build: number
+  }
 }
 
 export function useApps() {

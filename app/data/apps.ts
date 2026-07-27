@@ -43,10 +43,12 @@ export const apps: App[] = [
     description: 'Create floating widgets to track time however you need, whether counting up, counting down to a deadline, or displaying the current time, all with a quick command from the omnibox launcher.',
     icon: '/apps/time-utils/time-utils-icon.png',
     platforms: [
-      'macos'
+      'macos',
+      'ios'
     ],
     links: {
-      macAppStore: 'https://apps.apple.com/us/app/time-utils/id6758682107'
+      macAppStore: 'https://apps.apple.com/us/app/time-utils/id6758682107',
+      iosAppStore: 'https://apps.apple.com/us/app/time-utils/id6758682107'
     },
     screenshots: [
       '/apps/time-utils/time-utils-img1.jpg',
@@ -83,6 +85,10 @@ export const apps: App[] = [
     ],
     links: {
       download: '/downloads/TimeUtilsHelper.dmg'
+    },
+    update: {
+      version: '1.7',
+      build: 105
     }
   }
 ]

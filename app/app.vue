@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const feedbackOpen = ref(false)
+</script>
+
 <template>
   <div class="app">
     <div class="blueprint-bg" aria-hidden="true"></div>
@@ -13,16 +17,20 @@
         </div>
 
         <div class="tagline-wrapper">
-          <p class="tagline">Small, thoughtful utility apps</p>
+          <p class="tagline">Thoughtful software that makes work easier</p>
           <!-- Tagline annotation -->
           <img src="~/assets/taglineArrow.svg" alt="" class="tagline-annotation" aria-hidden="true" />
         </div>
+
+        <button class="contact-button" @click="feedbackOpen = true">Contact</button>
       </div>
     </header>
 
     <main class="main">
       <NuxtPage />
     </main>
+
+    <FeedbackModal :open="feedbackOpen" @close="feedbackOpen = false" />
 
     <footer class="footer">
       <p>&copy; {{ new Date().getFullYear() }} Well Duns</p>
@@ -114,6 +122,28 @@
   top: 0;
   pointer-events: none;
   user-select: none;
+}
+
+.contact-button {
+  margin-top: calc(-1 * var(--spacing-sm));
+  padding: var(--spacing-xs) var(--spacing-lg);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-background);
+  background-color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-card);
+}
+
+.contact-button:hover {
+  color: var(--color-primary);
+  background-color: var(--color-background);
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
 }
 
 .main {
