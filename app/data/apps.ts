@@ -88,7 +88,7 @@ export const apps: App[] = [
     },
     update: {
       version: '1.7',
-      build: 105
+      build: 104
     }
   }
 ]
