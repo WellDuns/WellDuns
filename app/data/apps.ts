@@ -87,8 +87,8 @@ export const apps: App[] = [
       download: '/downloads/TimeUtilsHelper.dmg'
     },
     update: {
-      version: '1.7',
-      build: 104
+      version: '1.7.1',
+      build: 107
     }
   }
 ]
