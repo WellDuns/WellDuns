@@ -219,6 +219,7 @@ watch(() => props.app, (newApp) => {
   line-height: 1.6;
   color: var(--color-text);
   margin-bottom: var(--spacing-lg);
+  white-space: pre-line;
 }
 
 .modal-links {

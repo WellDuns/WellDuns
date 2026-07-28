@@ -78,7 +78,7 @@ export const apps: App[] = [
     id: 'timeutils-helper',
     name: 'TimeUtils Global Hotkey Helper',
     tagline: 'TimeUtils in any App',
-    description: 'Want to use your TimeUtils App in any application? This helper application gives you a global keyboard shortcut to let you insert timestamps and durations into any application. \r\n\r\nNote: You must have the main TimeUtils app installed.',
+    description: 'Want to use your TimeUtils App in any application? This helper application gives you a global keyboard shortcut to let you insert timestamps and durations into any application. \r\n\r\nNote: You must have the main TimeUtils app installed to use clock offset.',
     icon: '/apps/timeutils-helper/timeutils-helper-icon.png',
     platforms: [
       'macos'
@@ -92,5 +92,21 @@ export const apps: App[] = [
       version: '1.7.1',
       build: 107
     }
+  },
+  {
+    id: 'bcc-list',
+    name: 'BCC List Extension',
+    tagline: "Insert BCCs into your email body",
+    description: "Adds a button to the Gmail compose window that inserts a list of your BCC recipients into the body of your email.\r\n\r\n How to use it: add BCC recipients as usual, click where you want the list to appear in the email body, then hit the button. A comma-separated list of everyone BCC'd will be inserted at the cursor.",
+    icon: '/apps/bcc-list/bcc-list-icon.png',
+    platforms: [
+      'web'
+    ],
+    links: {
+      website: 'https://chromewebstore.google.com/detail/bcc-list-generator/mfkfchbcpllocbagncdmmfecfopaafag'
+    },
+    screenshots: [
+      '/apps/bcc-list/bcc-list-img1.png'
+    ]
   }
 ]
