@@ -24,6 +24,7 @@ export interface App {
 export function useApps() {
   const route = useRoute()
   const router = useRouter()
+  const { $trackEvent } = useNuxtApp()
   const expandedAppId = useState<string | null>('expandedApp', () => null)
 
   const expandedApp = computed(() => {
@@ -34,6 +35,7 @@ export function useApps() {
   function openApp(id: string) {
     expandedAppId.value = id
     router.replace({ query: { app: id } })
+    $trackEvent(`app-view-${id}`)
   }
 
   function closeApp() {
@@ -46,6 +48,8 @@ export function useApps() {
     const appId = route.query.app as string | undefined
     if (appId && apps.find(app => app.id === appId)) {
       expandedAppId.value = appId
+      // Counts deep links like /?app=timeutils-helper (e.g. from the updater)
+      $trackEvent(`app-view-${appId}`)
     }
   }
 

@@ -2,10 +2,17 @@
 import AppStoreBadge from '~/assets/AppStoreBadge.svg'
 import MacAppStoreBadge from '~/assets/MacAppStoreBadge.svg'
 
-defineProps<{
+const props = defineProps<{
   type: 'website' | 'mac-app-store' | 'ios-app-store' | 'download'
   url: string
+  appId?: string
 }>()
+
+const { $trackEvent } = useNuxtApp()
+
+function handleClick() {
+  $trackEvent(`link-${props.appId ?? 'unknown'}-${props.type}`)
+}
 </script>
 
 <template>
@@ -15,6 +22,7 @@ defineProps<{
     rel="noopener noreferrer"
     class="store-button"
     :class="`store-button--${type}`"
+    @click="handleClick"
   >
     <template v-if="type === 'website'">
       <span class="store-button-label">Visit Website</span>

@@ -28,6 +28,14 @@ baseURL: '/',
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Coming+Soon&family=Inter:wght@400;500;600&display=swap' }
+      ],
+      script: [
+        // GoatCounter analytics (privacy-friendly, ignores localhost)
+        {
+          src: 'https://gc.zgo.at/count.js',
+          async: true,
+          'data-goatcounter': 'https://wellduns.goatcounter.com/count'
+        }
       ]
     }
   },

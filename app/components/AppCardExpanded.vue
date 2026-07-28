@@ -72,21 +72,25 @@ watch(() => props.app, (newApp) => {
                 v-if="app.links.website"
                 type="website"
                 :url="app.links.website"
+                :app-id="app.id"
               />
               <StoreButton
                 v-if="app.links.macAppStore"
                 type="mac-app-store"
                 :url="app.links.macAppStore"
+                :app-id="app.id"
               />
               <StoreButton
                 v-if="app.links.iosAppStore"
                 type="ios-app-store"
                 :url="app.links.iosAppStore"
+                :app-id="app.id"
               />
               <StoreButton
                 v-if="app.links.download"
                 type="download"
                 :url="app.links.download"
+                :app-id="app.id"
               />
             </div>
 

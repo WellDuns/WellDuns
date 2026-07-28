@@ -84,7 +84,9 @@ export const apps: App[] = [
       'macos'
     ],
     links: {
-      download: '/downloads/TimeUtilsHelper.dmg'
+      // GitHub Releases counts downloads (see README "Download stats").
+      // Tag-specific URL: bump it here when publishing a new version.
+      download: 'https://github.com/WellDuns/AppReleases/releases/download/timeutilshelper-v1.7.1/TimeUtilsHelper.dmg'
     },
     update: {
       version: '1.7.1',
